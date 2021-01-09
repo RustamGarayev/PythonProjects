@@ -3,3 +3,4 @@ beautifulsoup4==4.9.3
 requests==2.25.1
 plyer==2.0.0
 pyobjus==1.2.0
+easygui==0.98.1
