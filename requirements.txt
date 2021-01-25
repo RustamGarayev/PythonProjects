@@ -4,3 +4,5 @@ requests==2.25.1
 plyer==2.0.0
 pyobjus==1.2.0
 easygui==0.98.1
+simpleaudio==1.0.4
+pygame==2.0.1

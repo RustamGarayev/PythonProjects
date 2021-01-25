@@ -95,14 +95,14 @@ class Turtle(MovingObjects):
 
 
 # Log has the either the size of 1, 2 or 3
-class Log(MovingObject):
+class Log(MovingObjects):
     def __init__(self, start_x, size):
         if size == 1:
-            MovingObject.__init__(self, 2, [start_x, LOG_LANE_1], 'log')
+            MovingObjects.__init__(self, 2, [start_x, LOG_LANE_1], 'log')
         elif size == 2:
-            MovingObject.__init__(self, 3, [start_x, LOG_LANE_3], 'log2')
+            MovingObjects.__init__(self, 3, [start_x, LOG_LANE_3], 'log2')
         elif size == 3:
-            MovingObject.__init__(self, 4, [start_x, LOG_LANE_2], 'log3')
+            MovingObjects.__init__(self, 4, [start_x, LOG_LANE_2], 'log3')
 
 
 class Pavement:
@@ -110,7 +110,7 @@ class Pavement:
     def __init__(self, location):
         self.x = location[0]
         self.y = location[1]
-        self.image = toadie.load_image('image', 'pavement')
+        self.image = toadie.load_media('image', 'pavement')
         self.rect = pygame.Rect(
             self.x * BLOCK_SIZE,
             self.y * BLOCK_SIZE,
@@ -127,8 +127,8 @@ class Pad:
 
     def __init__(self, x_coord):
         self.x = x_coord
-        self.image = toadie.load_image('image', 'pad')
-        self.occupied_image = toadie.load_image('image', 'occupied_pad')
+        self.image = toadie.load_media('image', 'pad')
+        self.occupied_image = toadie.load_media('image', 'occupied_pad')
         self.padding_width = (BLOCK_SIZE - self.image.get_width()) / 2 + self.image.get_width()
         self.padding_height = (BLOCK_SIZE - self.image.get_height()) / 2
         self.rect = pygame.Rect(
@@ -169,7 +169,7 @@ class Timer:
         
         return no_time_left
     
-    def get_seconds(self):
+    def get_seconds_left(self):
         return int(self.time_remaining / MILLISECONDS)
     
     def reset(self):
